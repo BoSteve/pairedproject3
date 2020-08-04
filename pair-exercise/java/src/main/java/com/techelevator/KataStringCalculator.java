@@ -4,12 +4,17 @@ public class KataStringCalculator {
 
 	public static Object addString(String calc) {
 		// TODO Auto-generated method stub
-		calc = "";
-		
+	
+		String[] result2 = calc.split(",");
+		int var = 0;
 		if (calc.equals("")) {
-			return 0;
-			}
-		return 0;
+			return 0;	
+		}
+		for (String number : result2) {
+			var += Integer.parseInt(number);
+			
+		}
+		return var;
 }
 }
 
