@@ -19,8 +19,25 @@ public void oneNumber() {
 
 }
 
-@Test public void three() {
+@Test
+public void three() {
 	assertEquals(3, KataStringCalculator.addString("1,2"));
 
 }
+
+@Test
+public void Test_Different_Dilimeters() {
+	KataStringCalculator calc = new KataStringCalculator();
+	assertEquals(10, calc.addString("5\n3,2"));
+	assertEquals(14, calc.addString("3\n5\n2,4"));
+}
+
+@Test
+public void threeNumbers() {
+	assertEquals(13, KataStringCalculator.addString("1,5,7"));
+	assertEquals(101, KataStringCalculator.addString("25,25,51"));
+
+}
+
+
 }
