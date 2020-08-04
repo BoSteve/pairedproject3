@@ -20,8 +20,13 @@ public class WordCount {
 			
 			while ( fileScanner.hasNextLine()) {
 				String nextLine = fileScanner.nextLine();
-				String singleSpace = nextLine.replaceAll("\\s+", " ");
+				String singleSpace = nextLine.replaceAll("  ", "  ");
 				String[] words = singleSpace.split(" ");
+				for (String myWord : words) {
+					if (myWord.equals(words)) {
+						wordCount--;
+					}
+				}
 			
 				for ( String w : words) {
 
@@ -36,12 +41,13 @@ public class WordCount {
 			}
 			
 			
-		
+		}
 		catch(FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
-		
-
+		System.out.println("Word Count: " + wordCount);
+		System.out.println("Sentence Count: " + sentenceCount);
+	}
 	}
 
 
