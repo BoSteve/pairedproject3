@@ -26,7 +26,7 @@ public void three() {
 }
 
 @Test
-public void Test_Different_Dilimeters() {
+public void dilimeters() {
 
 	KataStringCalculator calc = new KataStringCalculator();
 	assertEquals(10, calc.add("5\n3,2"));
