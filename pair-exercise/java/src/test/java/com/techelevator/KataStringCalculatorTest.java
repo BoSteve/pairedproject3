@@ -27,9 +27,10 @@ public void three() {
 
 @Test
 public void Test_Different_Dilimeters() {
+
 	KataStringCalculator calc = new KataStringCalculator();
-	assertEquals(10, calc.addString("5\n3,2"));
-	assertEquals(14, calc.addString("3\n5\n2,4"));
+	assertEquals(10, calc.add("5\n3,2"));
+	assertEquals(14, calc.add("3\n5\n2,4"));
 }
 
 @Test

@@ -14,8 +14,21 @@ public class KataStringCalculator {
 			var += Integer.parseInt(number);
 			
 		}
-		return var;
+	return var;
 }
+	
+	public Object add(String string) {
+		int result = 0;
+		String[] temp = string.split("\\n|,");
+		if (string.equals("")) {
+			return 0;
+		}
+			for(String num: temp) {
+				result += Integer.parseInt(num);
+			}
+		return result;
+	}
+	
 }
 
 
