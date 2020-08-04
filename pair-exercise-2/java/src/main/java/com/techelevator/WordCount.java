@@ -16,37 +16,32 @@ public class WordCount {
 		int wordCount = 0;
 		int sentenceCount = 0;
 		
-		try ( Scanner fileScanner = new Scanner( file ) ) {
+		try ( Scanner fileScanner = new Scanner(file)) {
 			
 			while ( fileScanner.hasNextLine()) {
 				String nextLine = fileScanner.nextLine();
-				String singleSpace = nextLine.replaceAll("  ", "  ");
-				String[] words = singleSpace.split(" ");
-				for (String myWord : words) {
-					if (myWord.equals(words)) {
-						wordCount--;
+				String singleSpace = nextLine.replaceAll("\\s+", " ");
+				String[] words = singleSpace.split("");
+				System.out.println(words);
+				for (String w : words) {
+					if (w.equals(" ")) {
+						wordCount++;
 					}
-				}
-			
-				for ( String w : words) {
-
 					if (w.contains(".") || w.contains("?") || w.contains("!")) {
 						sentenceCount++;
 					}
+			
 				}
-			
-			
-			
-			
 			}
+			System.out.println("Word Count: " + wordCount);
+			System.out.println("Sentence Count: " + sentenceCount);
 			
 			
 		}
 		catch(FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("Word Count: " + wordCount);
-		System.out.println("Sentence Count: " + sentenceCount);
+
 	}
 	}
 
