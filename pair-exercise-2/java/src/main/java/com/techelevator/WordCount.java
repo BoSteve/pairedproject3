@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -18,15 +19,22 @@ public class WordCount {
 		
 		try ( Scanner fileScanner = new Scanner(file)) {
 			
+			FileInputStream fis = new FileInputStream(file);
+			byte[] bytesArray = new byte[(int) file.length()];
+			fis.read(bytesArray);
+			String s = new String(bytesArray);
+			String[] data = s.split("\\s+");
+			for (int i = 0; i < data.length; i++) {
+			wordCount++;
+			}
+			
 			while ( fileScanner.hasNextLine()) {
 				String nextLine = fileScanner.nextLine();
-				String singleSpace = nextLine.replaceAll("\\s+", " ");
-				String[] words = singleSpace.split("");
-				System.out.println(words);
+				String[] words = nextLine.split("\\s+");
 				for (String w : words) {
-					if (w.equals(" ")) {
-						wordCount++;
-					}
+//					if (w.contains("")) {
+//						wordCount++;
+//					}
 					if (w.contains(".") || w.contains("?") || w.contains("!")) {
 						sentenceCount++;
 					}
@@ -38,7 +46,7 @@ public class WordCount {
 			
 			
 		}
-		catch(FileNotFoundException e) {
+		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
 
