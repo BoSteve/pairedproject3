@@ -31,11 +31,18 @@ public class FindAndReplace {
 				Scanner fileScanner = new Scanner(originalFile); 
 				File newFile = new File("alices_adventures_in_wonderland2.txt");
 				PrintWriter printWriter = new PrintWriter(newFile);
-				while (fileScanner.hasNextLine());
+				
+				
+				while (fileScanner.hasNextLine()) {
 				String word = fileScanner.nextLine();
-				if (word.contains(userWord)) {
-					word.replace(userWord, userReplace);
+				
+				word = word.replaceAll(userWord, userReplace);
+				printWriter.println(word);
 				}
+				
+//				if (word.contains(userWord)) {
+//					word.replace(userWord, userReplace);
+//				}
 				
 			} catch (FileNotFoundException e) {
 				System.out.println("No file found");
