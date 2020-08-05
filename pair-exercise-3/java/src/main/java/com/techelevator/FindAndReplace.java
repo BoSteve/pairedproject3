@@ -1,6 +1,8 @@
 package com.techelevator;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class FindAndReplace {
@@ -23,8 +25,17 @@ public class FindAndReplace {
 			
 			Scanner replaceWord = new Scanner(System.in);
 			System.out.println("Please enter a word to replace it with: ");
-			String userReplace = searchWord.nextLine();
+			String userReplace = replaceWord.nextLine();
 			
+			try { 
+				Scanner fileScanner = new Scanner(originalFile); 
+				File newFile = new File("alices_adventures_in_wonderland2.txt");
+				PrintWriter printWriter = new PrintWriter(newFile);
+				
+				
+			} catch (FileNotFoundException e) {
+				System.out.println("No file found");
+			}
 			}
 		}
 	}
